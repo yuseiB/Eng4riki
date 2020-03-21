@@ -1,0 +1,133 @@
+\documentclass[a4j,10pt,oneside,openany]{jsbook}
+%
+\usepackage{amsmath,amssymb}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\usepackage{makeidx}
+\usepackage{url}
+\usepackage{braket}
+\usepackage{color}
+\usepackage{dcolumn}
+\usepackage{here}
+%
+\makeindex
+%
+\newcommand{\lambdabar}{{\mkern0.75mu\mathchar '26\mkern -9.75mu\lambda}}
+\newcommand{\innerprod}[2]{\bm{#1} \cdot \bm{#2}}
+\newcommand{\derivative}[2]{\frac{\mathrm{d} #1}{\mathrm{d} #2}}
+\newcommand{\dderivative}[2]{\frac{\mathrm{d}^2 #1}{\mathrm{d} {#2}^2}}
+\newcommand{\partialder}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\coloneqq}{\mathrel{\mathop:}=}
+%
+\setlength{\textwidth}{\fullwidth}
+\setlength{\textheight}{44\baselineskip}
+\addtolength{\textheight}{\topskip}
+\setlength{\voffset}{-0.6in}
+%
+\title{工学4力　まとめノート(未完) \\ \small{\url{ver001}}}
+\author{YuseiB  \\ \url{@saka216saka}}
+\date{\today}
+\begin{document}
+\maketitle
+\frontmatter
+\tableofcontents
+\mainmatter
+% \setcounter{chapter}{-1} %—–0章から開始
+
+%---------------
+進捗管理
+
+ver001: 2020-03-21 章立て、材料力学はじめた
+%---------------
+
+\chapter{材料力学 Material Mechanics}
+
+構造物の各部分に生じる内力や変形を解析することを目的とする分野。
+
+\section{応力と歪み1}
+\subsection{応力}
+仮想切断面にはたらく力：内力(or 面力) $F_{in} = F_{ex}$
+
+単位面積当たり応力$\sigma$  ($A$: 断面積)：
+\[\sigma_y \coloneqq \frac{F_{in}}{A}\]
+
+剪断力(shearing force) $\tau$：
+\[\tau_{xy} = \frac{F_{in}}{A}\]
+
+座標系に依存する応力の成分表示は実際には不便。→ テンソルを用いた解析、主応力評価, von Mises Stress.
+
+\subsection{ひずみ}
+* 長さ$(x,y) = (2s, l)$の棒を$y$方向に引っ張ると$y$方向に$\Delta l$ だけ伸びて、同時に$x$方向には$\Delta s$だけ縮んだ。
+
+ひずみ$\varepsilon$：
+\[ \varepsilon_y = \frac{\Delta l}{l},\ \ \ \varepsilon_x = -\frac{\Delta s}{s}\]
+または、
+\[\varepsilon_y = \partialder{u}{y}\].
+
+材料固有の物性値 Poisson's Ratio $\nu$：
+\[\nu = \frac{-\varepsilon_x}{\varepsilon_y}\]
+\newline
+* 剪断変形のひずみ
+歪み$\gamma$：
+\[ \gamma_{yx} = \gamma_{xy} = \frac{\Delta u}{l} = \tan \theta \sim \theta \]
+または、
+\[\gamma_{xy} = \partialder{u}{y}\]
+
+\section{応力と歪み2}
+
+応力ー歪み曲線（図は省略）
+
+*　断面積$A_0$、長さ$l$の棒に荷重$P$を与えて引き伸ばす。
+
+公称ひずみ$\varepsilon_n$：
+\[\varepsilon_n = \frac{l-l_0}{l_0}\]
+
+公称応力　$\sigma_n$：
+\[\sigma = \frac{P}{A}\]
+
+弾性変形 
+
+ヤング率(Young's Module)$E$：
+\[E = \frac{\sigma}{\varepsilon}\]
+ポアソン比(Poisson's Ratio)$\nu$：
+\[\nu = \frac{-\varepsilon_x}{\varepsilon_y}\]
+ひずみエネルギー$U^e$：
+\[U^e = \frac{1}{2} \sigma \varepsilon = \frac{1}{2} E \varepsilon^2\]
+↓
+
+塑性変形
+
+塑性ひずみ(or 永久ひずみ)$\varepsilon_p$
+
+弾性ひずみ$\varepsilon_e$
+
+全ひずみ：$\varepsilon = \varepsilon_p + \varepsilon_e$
+% -----------------------------------------------------------
+
+\chapter{機械力学 Dynamics of Machinary}
+機械の稼働時にかかわる問題についての分野。
+
+…工事中
+
+
+\chapter{流体力学 Fluid Dynamics}
+空気や水などの流れを扱う分野。
+
+…工事中
+
+\chapter{熱力学 Thermodynamics}
+熱エネルギーを中心とした、マクロな視点での仕事やエネルギーについての分野。
+
+…工事中
+
+
+\begin{thebibliography}{20}
+ \bibitem{kogakuin} \url{http://www.mech.kogakuin.ac.jp/ms/feature/about_4riki.html} (2020-03-21 閲覧)
+ \bibitem{UTmech} \url{http://www.fml.t.u-tokyo.ac.jp/lecture/handout/zairiki/material_mech_text2018_ver1.60.pdf} (2020-03-21 閲覧)
+\end{thebibliography}
+\newpage
+\printindex
+%
+%
+\end{document}
